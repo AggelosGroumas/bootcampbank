@@ -1,0 +1,21 @@
+<?xml version="1.0"  encoding="UTF-8"?>
+<!DOCTYPE Configure PUBLIC "-//Mort Bay Consulting//DTD Configure//EN" "http://www.eclipse.org/jetty/configure.dtd">
+
+<Configure id ="wac" class="org.eclipse.jetty.webapp.WebAppContext">
+    <New id="Datasource" class="org.eclipse.jetty.plus.jndi.Resource">
+        <Arg>jdbc/ebanking</Arg>
+        <Arg>
+            <New class="com.zaxxer.hikari.HikariDataSource">
+                <Arg>
+                    <New class="com.zaxxer.hikari.HikariConfig">
+                        <Set name="dataSourceClassName">org.sqlite.SQLiteDataSource</Set>
+                        <Call name="addDataSourceProperty">
+                            <Arg>url</Arg>
+                            <Arg>jdbc:sqlite:/Users/agroumas/Downloads/sqlite/ebanking.db</Arg>
+                        </Call>
+                    </New>
+                </Arg>
+            </New>
+        </Arg>
+    </New>
+</Configure>
