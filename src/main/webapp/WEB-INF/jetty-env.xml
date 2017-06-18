@@ -11,7 +11,7 @@
                         <Set name="dataSourceClassName">org.sqlite.SQLiteDataSource</Set>
                         <Call name="addDataSourceProperty">
                             <Arg>url</Arg>
-                            <Arg>jdbc:sqlite:/Users/agroumas/Downloads/sqlite/ebanking.db</Arg>
+                            <Arg>jdbc:sqlite:./ebanking.db</Arg>
                         </Call>
                     </New>
                 </Arg>
